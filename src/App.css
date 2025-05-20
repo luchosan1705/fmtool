@@ -2,17 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -22,17 +11,330 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.upload-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.upload-button {
+  background-color: #61dafb;
+  color: #282c34;
+  padding: 15px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.upload-button:hover {
+  background-color: #4fa8d3;
+}
+
+.table-container {
+  width: 90%;
+  max-width: 1000px;
+  margin-top: 20px;
+}
+
+.jugadores-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: white;
+  color: #282c34;
+}
+
+.jugadores-table th, .jugadores-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.jugadores-table th {
+  background-color: #61dafb;
+  color: #282c34;
+}
+
+.jugadores-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.jugadores-table tr:hover {
+  background-color: #ddd;
+}
+
+.back-button {
+  background-color: #ff6b6b;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.back-button:hover {
+  background-color: #ff5252;
+}
+
+/* Estilos para el loader */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.loader {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #61dafb;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Estilos para el loader */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 20px;
+  background-color: #282c34;
+  color: white;
+}
+
+.loader {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #61dafb;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Estilo para cuando solo se muestra la tabla */
+.table-only-container {
+  padding: 20px;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.jugadores-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  background-color: white;
+  color: #282c34;
+}
+
+.jugadores-table th, .jugadores-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.jugadores-table th {
+  background-color: #61dafb;
+  color: #282c34;
+}
+
+.jugadores-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.jugadores-table tr:hover {
+  background-color: #ddd;
+}
+/* Estilos para la página de detalle del jugador */
+.jugador-detalle-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #333;
+}
+
+.jugador-header {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.jugador-header h1 {
+  margin: 10px 0 5px;
+  font-size: 2.5rem;
+}
+
+.jugador-meta {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.posicion-badge {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.pierna-info {
+  opacity: 0.8;
+}
+
+.jugador-stats-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stats-columns-container {
+  display: flex;
+  gap: 20px;
+}
+
+.stats-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stats-card {
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.stats-card h2, .stats-card h3 {
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f1f1f1;
+}
+
+.overall-stats {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1e3c72;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.attributes-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.attribute-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.attribute-name {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: #34495e;
+}
+
+.attribute-value {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.attribute-bar {
+  height: 8px;
+  background: linear-gradient(90deg, #3498db, #2ecc71);
+  border-radius: 4px;
+  flex-grow: 1;
+}
+
+.attribute-value span {
+  min-width: 40px;
+  text-align: right;
+  font-weight: bold;
+  color: #1e3c72;
+}
+
+.back-button {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .stats-columns-container {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .jugador-header {
+    padding: 20px;
+  }
+  
+  .jugador-header h1 {
+    font-size: 1.8rem;
   }
 }
